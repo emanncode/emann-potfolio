@@ -51,8 +51,21 @@ body {
   background: var(--color-dim2);
 }
 
+@keyframes scroll-line {
+  0% {
+    left: -100%;
+  }
 
-@keyframes particles {
+  100% {
+    left: 100%;
+  }
+}
+
+.animate-scroll-line {
+  animation: scroll-line 2.2s ease-in-out infinite;
+}
+
+@keyframes grain {
 
   0%,
   100% {
@@ -72,20 +85,16 @@ body {
   }
 }
 
-#particles {
-  animation: particles 0.8s steps(2) infinite;
+.animate-grain {
+  animation: grain 0.8s steps(2) infinite;
 }
 
-@keyframes scroll-line {
-  0% {
-    left: -100%;
-  }
-
-  100% {
-    left: 100%;
-  }
+html,
+body {
+  cursor: none;
 }
 
-.animate-scroll-line {
-  animation: scroll-line 2.2s ease-in-out infinite;
+a,
+button {
+  cursor: none;
 }

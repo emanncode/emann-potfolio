@@ -1,5 +1,8 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
+
 import { cn } from "@/lib/utils";
+
+import { useMagnetic } from "@/hooks/useMagnetic";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
@@ -16,14 +19,23 @@ export default function Button({
   variant = "primary",
   ...props
 }: ButtonProps) {
+  const { ref, handleMouseMove, handleMouseLeave } =
+    useMagnetic<HTMLButtonElement>();
+
   return (
     <button
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className={cn(
         "group relative inline-flex items-center justify-center gap-3 overflow-hidden",
+
         "transition-all duration-300",
-        "cursor-pointer",
+
         "font-display uppercase tracking-[0.2em]",
+
         "text-lg",
+
         "px-8 py-4",
 
         variant === "primary" && "bg-accent text-black hover:bg-white",

@@ -54,7 +54,7 @@ export default function HeroContent() {
         }}
         className="
           mt-7
-          max-w-[560px]
+          max-w-140
           text-[clamp(15px,1.6vw,20px)]
           leading-relaxed
           text-white/60
