@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/navbar/Navbar";
 
 import Hero from "@/components/sections/hero/Hero";
 import AboutSection from "@/components/sections/about/AboutSection";
+import ProjectsSection from "@/components/sections/projects/ProjectsSection";
 
 import Cursor from "@/components/providers/Cursor";
 import Grain from "@/components/providers/Grain";
@@ -26,6 +27,11 @@ export default function App() {
 
       {/* ABOUT */}
       <AboutSection />
+
+      <Divider />
+
+      {/* PROJECTS */}
+      <ProjectsSection />
 
       <Divider />
     </main>
