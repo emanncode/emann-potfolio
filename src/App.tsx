@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import Navbar from "@/components/layout/navbar/Navbar";
 
 import Section from "@/components/layout/Section";
 
@@ -8,10 +8,14 @@ import Button from "@/components/ui/button/Button";
 import SectionLabel from "@/components/ui/section-label/SectionLabel";
 import SectionTitle from "@/components/ui/section-title/SectionTitle";
 
+import { ArrowRight } from "lucide-react";
+
 export default function App() {
   return (
     <main className="min-h-screen bg-bg text-text">
-      <Section id="about">
+      <Navbar />
+
+      <Section id="about" className="pt-40">
         <Reveal>
           <SectionLabel number="01" title="About" />
         </Reveal>
@@ -28,7 +32,7 @@ export default function App() {
         </Reveal>
 
         <Reveal delay={0.3}>
-          <Button className="text-white" rightIcon={<ArrowRight size={18} />}>Contact Me</Button>
+          <Button rightIcon={<ArrowRight size={18} />}>Contact Me</Button>
         </Reveal>
       </Section>
 
