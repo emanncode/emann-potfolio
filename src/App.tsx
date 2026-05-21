@@ -1,23 +1,38 @@
+import { ArrowRight } from "lucide-react";
 
-function App() {
+import Section from "@/components/layout/Section";
+
+import Divider from "@/components/ui/divider/Divider";
+import Reveal from "@/components/ui/reveal/Reveal";
+import Button from "@/components/ui/button/Button";
+import SectionLabel from "@/components/ui/section-label/SectionLabel";
+import SectionTitle from "@/components/ui/section-title/SectionTitle";
+
+export default function App() {
   return (
-    <>
-      <div id="particles"
-        style={{
-          position: "fixed",
-          inset: 0,
-          pointerEvents: "none",
-          zIndex: 9999,
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")`,
-          opacity: 0.04,
-          backgroundRepeat: "repeat",
-        }}
-      ></div>
+    <main className="min-h-screen bg-bg text-text">
+      <Section id="about">
+        <Reveal>
+          <SectionLabel number="01" title="About" />
+        </Reveal>
 
-      <div className="relative px-[3%]" style={{ zIndex: 1 }}>
-      </div>
-    </>
+        <Reveal delay={0.1}>
+          <SectionTitle title={["BUILDING", "DIGITAL EXPERIENCES"]} />
+        </Reveal>
+
+        <Reveal delay={0.2}>
+          <p className="mb-10 max-w-2xl text-lg leading-relaxed text-white/60">
+            I build cinematic digital experiences for web and mobile using
+            React, React Native, TypeScript, and animation-driven interfaces.
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.3}>
+          <Button className="text-white" rightIcon={<ArrowRight size={18} />}>Contact Me</Button>
+        </Reveal>
+      </Section>
+
+      <Divider />
+    </main>
   );
 }
-
-export default App;
