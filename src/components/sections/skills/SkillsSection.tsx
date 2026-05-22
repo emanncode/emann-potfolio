@@ -9,10 +9,24 @@ const skillGroups = [
       { label: "React", highlighted: true },
       { label: "Next.js", highlighted: true },
       { label: "TypeScript", highlighted: true },
-      { label: "Vue.js" },
+      { label: "Vue.js", highlighted: true },
       { label: "JavaScript" },
       { label: "Tailwind CSS" },
-      { label: "HTML / CSS" },
+      { label: "HTML" },
+      { label: "CSS" },
+    ],
+  },
+
+  {
+    title: "Backend & Database",
+    skills: [
+      { label: "PHP", highlighted: true },
+      { label: "SQL", highlighted: true },
+      { label: "MySQL", highlighted: true },
+      { label: "REST APIs" },
+      { label: "Backend Architecture" },
+      { label: "Database Design" },
+      { label: "Supabase" },
     ],
   },
 
@@ -32,21 +46,11 @@ const skillGroups = [
     title: "Animation & 3D",
     skills: [
       { label: "Framer Motion", highlighted: true },
-      { label: "GSAP" },
+      { label: "GSAP", highlighted: true },
       { label: "Three.js" },
+      { label: "Micro Interactions" },
+      { label: "Scroll Animations" },
       { label: "CSS Animation" },
-    ],
-  },
-
-  {
-    title: "Backend & Database",
-    skills: [
-      { label: "Supabase", highlighted: true },
-      { label: "PHP", highlighted: true },
-      { label: "MySQL", highlighted: true },
-      { label: "REST APIs" },
-      { label: "Git / GitHub" },
-      { label: "Vercel" },
     ],
   },
 
@@ -54,15 +58,18 @@ const skillGroups = [
     title: "Architecture",
     skills: [
       { label: "Component Design" },
-      { label: "Performance" },
+      { label: "Performance Optimization" },
+      { label: "Reusable Systems" },
       { label: "State Management" },
       { label: "Real-time Features" },
     ],
   },
 
   {
-    title: "How I Work",
+    title: "Workflow",
     skills: [
+      { label: "Git / GitHub" },
+      { label: "Vercel" },
       { label: "Problem Solving" },
       { label: "Fast Learner" },
       { label: "Collaboration" },
