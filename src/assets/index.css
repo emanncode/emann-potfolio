@@ -14,7 +14,7 @@
   --color-text: #f0ece6;
   --color-dim: #555;
   --color-dim2: #333;
-  --color-accent: #b8ff00;
+  --color-primary: #b8ff00;
 
   --font-display: "Bebas Neue", sans-serif;
   --font-body: "Manrope", sans-serif;
@@ -35,7 +35,7 @@ body {
 }
 
 ::selection {
-  background: var(--color-accent);
+  background: var(--color-primary);
   color: var(--color-bg);
 }
 

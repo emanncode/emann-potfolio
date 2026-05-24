@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 
-import Reveal  from "@/components/ui/reveal/Reveal";
+import Reveal from "@/components/ui/reveal/Reveal";
 
 import ProjectTag from "./ProjectTag";
 
@@ -122,7 +122,7 @@ export default function ProjectCard({
                   rounded-full
                   border
                   border-white/10
-                  bg-white/[0.03]
+                  bg-white/3
                   px-4
                   py-1
 
@@ -151,10 +151,7 @@ export default function ProjectCard({
           {/* TAGS */}
           <div className="mt-7 flex flex-wrap gap-3">
             {tags.map((tag) => (
-              <ProjectTag
-                key={tag}
-                label={tag}
-              />
+              <ProjectTag key={tag} label={tag} />
             ))}
           </div>
         </div>

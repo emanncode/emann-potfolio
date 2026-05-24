@@ -32,7 +32,7 @@ export default function HeroTitle({ title }: HeroTitleProps) {
             }}
             className={`
               block
-              ${index === 2 ? "text-accent" : ""}
+              ${index === 2 ? "text-primary" : ""}
             `}
           >
             {line}

@@ -31,7 +31,7 @@ export default function HeroContent() {
           text-[12px]
           uppercase
           tracking-[0.3em]
-          text-accent
+          text-primary
         "
       >
         {heroData.eyebrow}

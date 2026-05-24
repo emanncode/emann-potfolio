@@ -30,7 +30,7 @@ export default function ExperienceCard({
         {/* RIGHT */}
         <div className="relative">
           {/* glow */}
-          <div className="absolute inset-0 rounded-3xl bg-primary/[0.03] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
+          <div className="absolute inset-0 rounded-3xl bg-primary/3 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
 
           <div className="relative z-10">
             <h3 className="mb-2 font-display text-4xl leading-none tracking-[-0.03em] transition-colors duration-300 group-hover:text-primary">

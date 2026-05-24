@@ -38,10 +38,10 @@ export default function Button({
 
         "px-8 py-4",
 
-        variant === "primary" && "bg-accent text-black hover:bg-white",
+        variant === "primary" && "bg-primary text-black hover:bg-white",
 
         variant === "secondary" &&
-          "border border-border bg-transparent text-text hover:border-accent hover:text-accent",
+          "border border-border bg-transparent text-text hover:border-primary hover:text-primary",
 
         className,
       )}

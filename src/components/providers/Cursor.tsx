@@ -65,7 +65,7 @@ export default function Cursor() {
           pointer-events-none fixed z-[10000]
           h-[10px] w-[10px]
           rounded-full
-          bg-accent
+          bg-primary
           mix-blend-difference
         "
       />
@@ -85,7 +85,7 @@ export default function Cursor() {
         className="
           pointer-events-none fixed z-[9998]
           rounded-full
-          border border-accent/40
+          border border-primary/40
         "
       />
     </>

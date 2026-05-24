@@ -13,7 +13,7 @@ export default function HeroScroll() {
           className="
             absolute top-0 -left-full
             h-full w-full
-            bg-accent
+            bg-primary
             animate-scroll-line
           "
         />
