@@ -3,8 +3,8 @@ import Reveal from "@/components/ui/reveal/Reveal";
 const links = [
   {
     label: "GitHub",
-    value: "Emann-Code-01",
-    href: "https://github.com/Emann-Code-01",
+    value: "emanncode",
+    href: "https://github.com/emanncode",
   },
 
   {
