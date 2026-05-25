@@ -3,6 +3,7 @@ import Container from "@/components/ui/container/Container";
 import { heroData } from "@/data/hero";
 
 import HeroBackground from "./HeroBackground";
+import HeroAmbient from "./HeroAmbient";
 import HeroContent from "./HeroContent";
 import HeroScroll from "./HeroScroll";
 import HeroStats from "./HeroStats";
@@ -18,6 +19,7 @@ export default function Hero() {
       "
     >
       <HeroBackground />
+      <HeroAmbient />
 
       <Container className="relative z-10 flex flex-col">
         <HeroContent />

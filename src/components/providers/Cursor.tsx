@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
@@ -10,12 +12,30 @@ export default function Cursor() {
 
   const [hovering, setHovering] = useState(false);
 
+  const [visible, setVisible] = useState(false);
+
   useEffect(() => {
-    const move = (e: MouseEvent) => {
+    const moveCursor = (x: number, y: number) => {
       setPosition({
-        x: e.clientX,
-        y: e.clientY,
+        x,
+        y,
       });
+
+      setVisible(true);
+    };
+
+    /* DESKTOP */
+    const handleMouseMove = (e: MouseEvent) => {
+      moveCursor(e.clientX, e.clientY);
+    };
+
+    /* MOBILE */
+    const handleTouchMove = (e: TouchEvent) => {
+      const touch = e.touches[0];
+
+      if (!touch) return;
+
+      moveCursor(touch.clientX, touch.clientY);
     };
 
     const handleEnter = () => {
@@ -26,34 +46,69 @@ export default function Cursor() {
       setHovering(false);
     };
 
-    window.addEventListener("mousemove", move);
+    /* EVENTS */
+    window.addEventListener(
+      "mousemove",
+      handleMouseMove
+    );
 
-    const hoverables = document.querySelectorAll("a, button");
+    window.addEventListener(
+      "touchmove",
+      handleTouchMove,
+      {
+        passive: true,
+      }
+    );
+
+    const hoverables =
+      document.querySelectorAll("a, button");
 
     hoverables.forEach((el) => {
-      el.addEventListener("mouseenter", handleEnter);
+      el.addEventListener(
+        "mouseenter",
+        handleEnter
+      );
 
-      el.addEventListener("mouseleave", handleLeave);
+      el.addEventListener(
+        "mouseleave",
+        handleLeave
+      );
     });
 
     return () => {
-      window.removeEventListener("mousemove", move);
+      window.removeEventListener(
+        "mousemove",
+        handleMouseMove
+      );
+
+      window.removeEventListener(
+        "touchmove",
+        handleTouchMove
+      );
 
       hoverables.forEach((el) => {
-        el.removeEventListener("mouseenter", handleEnter);
+        el.removeEventListener(
+          "mouseenter",
+          handleEnter
+        );
 
-        el.removeEventListener("mouseleave", handleLeave);
+        el.removeEventListener(
+          "mouseleave",
+          handleLeave
+        );
       });
     };
   }, []);
 
   return (
     <>
+      {/* INNER DOT */}
       <motion.div
         animate={{
-          x: position.x - 5,
-          y: position.y - 5,
-          scale: hovering ? 0.5 : 1,
+          x: position.x - 4,
+          y: position.y - 4,
+          scale: hovering ? 0.6 : 1,
+          opacity: visible ? 1 : 0,
         }}
         transition={{
           type: "spring",
@@ -62,20 +117,29 @@ export default function Cursor() {
           mass: 0.5,
         }}
         className="
-          pointer-events-none fixed z-[10000]
-          h-[10px] w-[10px]
+          pointer-events-none
+          fixed
+          left-0
+          top-0
+          z-[10000]
+          h-2
+          w-2
           rounded-full
           bg-primary
           mix-blend-difference
+          md:h-[10px]
+          md:w-[10px]
         "
       />
 
+      {/* OUTER RING */}
       <motion.div
         animate={{
-          x: position.x - 21,
-          y: position.y - 21,
-          width: hovering ? 64 : 42,
-          height: hovering ? 64 : 42,
+          x: position.x - 18,
+          y: position.y - 18,
+          width: hovering ? 64 : 38,
+          height: hovering ? 64 : 38,
+          opacity: visible ? 1 : 0,
         }}
         transition={{
           type: "spring",
@@ -83,9 +147,15 @@ export default function Cursor() {
           damping: 22,
         }}
         className="
-          pointer-events-none fixed z-[9998]
+          pointer-events-none
+          fixed
+          left-0
+          top-0
+          z-[9998]
           rounded-full
-          border border-primary/40
+          border
+          border-primary/40
+          backdrop-blur-sm
         "
       />
     </>

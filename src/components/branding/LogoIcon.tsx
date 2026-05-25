@@ -21,7 +21,6 @@ export default function LogoIcon() {
         className="
           absolute
           inset-0
-          bg-[radial-gradient(circle_at_top,rgba(190,242,100,0.18),transparent_70%)]
         "
       />
 
