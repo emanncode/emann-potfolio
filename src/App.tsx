@@ -13,9 +13,12 @@ import PageTransition from "@/components/providers/PageTransition";
 
 import Divider from "@/components/ui/divider/Divider";
 
+import IntroLoader from "@/components/loaders/IntroLoader";
 export default function App() {
   return (
     <main className="min-h-screen bg-bg text-text">
+      <IntroLoader />
+
       {/* GLOBAL EFFECTS */}
       <Cursor />
 
