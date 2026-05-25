@@ -18,7 +18,7 @@ Email: ${email || "(not given)"}
 Message:
 ${message}`;
 
-    return `https://wa.me/2349048801668?text=${encodeURIComponent(text)}`;
+    return `mailto:olajubajeifeoluwa93@gmail.com?subject=Contact&body=${encodeURIComponent(text)}`;
   }, [name, email, message]);
 
   return (

@@ -29,7 +29,7 @@ export default function IntroLoader() {
           className="
             fixed
             inset-0
-            z-[9999]
+            z-9999
             flex
             items-center
             justify-center
@@ -50,8 +50,8 @@ export default function IntroLoader() {
             }}
             className="
               absolute
-              h-[30rem]
-              w-[30rem]
+              h-120
+              w-120
               rounded-full
               bg-primary/10
               blur-3xl
