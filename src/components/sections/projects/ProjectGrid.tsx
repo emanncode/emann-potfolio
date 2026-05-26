@@ -6,6 +6,7 @@ const projects = [
     link: "https://uniflow-ebon.vercel.app",
     description: "A full cross-platform solution with a Next.js admin dashboard and React Native mobile application.",
     tags: ["Next.js", "React Native", "Expo", "TypeScript", "Supabase"],
+    image: "/uniflow.png",
   },
   {
     title: "MIFI MANAGER",
@@ -21,6 +22,7 @@ const projects = [
     delay: 0.2,
     description: "A cinematic film discovery platform with rich browsing experiences and smooth UI interactions.",
     tags: ["React", "TypeScript", "Tailwind", "API Integration"],
+    image: "/filmritz.png",
   },
 ];
 
@@ -33,6 +35,7 @@ export default function ProjectGrid() {
           index={index}
           number={`0${index + 1}`}
           title={project.title}
+          image={`/${project.title.toLowerCase().replace(/\s+/g, "-")}.png`}
           description={project.description}
           tags={project.tags}
           link={project.link}
